@@ -85,7 +85,7 @@ passwordToggle.addEventListener('click', function() {
      //if gusto mag auto hide for seconds, add code here hehe   
     } else {
         passwordInput.type = 'password';
-        passwordToggle.textContent = 'visibility';
+        passwordToggle.textContent = 'visibility_off'; // Material Icons "eye-off" symbol
         passwordToggle.title = 'Show password';
     }
 });
