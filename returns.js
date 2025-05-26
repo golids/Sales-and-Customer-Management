@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Logout button functionality
     document.getElementById('logoutBtn').addEventListener('click', function() {
-        window.location.href = 'main.html';
+        window.location.href = 'index.html';
     });
 
     // Form submission handlers

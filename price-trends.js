@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     document.getElementById('logoutBtn').addEventListener('click', function() {
-        window.location.href = 'main.html';
+        window.location.href = 'index.html';
     });
 
     // Toggle custom date range

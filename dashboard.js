@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Logout button functionality
     document.getElementById('logoutBtn').addEventListener('click', function() {
-        window.location.href = 'main.html'; // Redirect to login page
+        window.location.href = 'index.html'; // Redirect to login page
     });
 
     // Function to update content area
