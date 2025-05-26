@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Trend Visualization</title>
+    <link rel="stylesheet" href="price-trends.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.0.2"></script>
+</head>
+<body>
+    <div class="price-trends-container">
+        <header class="price-trends-header">
+            <h1>Price Trend Visualization</h1>
+            <div class="header-actions">
+                <button id="backBtn">← Back to Dashboard</button>
+                <button id="logoutBtn">Logout</button>
+            </div>
+        </header>
+        
+        <main class="price-trends-content">
+            <div class="controls-panel">
+                <div class="control-group">
+                    <label for="productSelect">Product/Category:</label>
+                    <select id="productSelect" class="control-input">
+                        <option value="all">All Products</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="apparel">Apparel</option>
+                        <option value="home">Home Goods</option>
+                        <option value="accessories">Accessories</option>
+                    </select>
+                </div>
+                
+                <div class="control-group">
+                    <label for="timeRange">Time Range:</label>
+                    <select id="timeRange" class="control-input">
+                        <option value="3m">Last 3 Months</option>
+                        <option value="6m" selected>Last 6 Months</option>
+                        <option value="12m">Last 12 Months</option>
+                        <option value="custom">Custom Range</option>
+                    </select>
+                </div>
+                
+                <div class="control-group" id="customRangeGroup" style="display:none;">
+                    <label for="customRange">Select Range:</label>
+                    <input type="text" id="customRange" class="control-input" placeholder="MM/DD/YYYY - MM/DD/YYYY">
+                </div>
+                
+                <button id="applyBtn" class="control-btn">Apply Filters</button>
+                <button id="exportBtn" class="control-btn secondary">Export Data</button>
+            </div>
+            
+            <div class="chart-container">
+                <canvas id="priceChart"></canvas>
+            </div>
+            
+            <div class="dual-chart-container">
+                <div class="chart-wrapper">
+                    <canvas id="priceVolumeChart"></canvas>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="marginChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="insights-panel">
+                <h2>Pricing Insights</h2>
+                <div class="insights-grid">
+                    <div class="insight-card">
+                        <h3>Optimal Price Point</h3>
+                        <p class="insight-value">$89.99</p>
+                        <p class="insight-detail">Maximizes revenue at current demand</p>
+                    </div>
+                    <div class="insight-card">
+                        <h3>Price Elasticity</h3>
+                        <p class="insight-value">1.42</p>
+                        <p class="insight-detail elastic">Highly Elastic</p>
+                    </div>
+                    <div class="insight-card">
+                        <h3>Promo Effectiveness</h3>
+                        <p class="insight-value">68%</p>
+                        <p class="insight-detail">Revenue lift during promotions</p>
+                    </div>
+                    <div class="insight-card">
+                        <h3>Margin Protection</h3>
+                        <p class="insight-value">82%</p>
+                        <p class="insight-detail">Of products maintain target margin</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="price-trends.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Tracking</title>
+    <link rel="stylesheet" href="order.css">
+</head>
+<body>
+    <div class="order-container">
+        <header class="order-header">
+            <h1>Order Lifecycle Tracking</h1>
+            <div class="header-actions">
+                <button id="backBtn">← Back to Dashboard</button>
+                <button id="logoutBtn">Logout</button>
+            </div>
+        </header>
+        
+        <main class="order-content">
+            <div class="status-tracker">
+                <div class="status-progress">
+                    <div class="status-step pending active">
+                        <div class="status-icon">⏳</div>
+                        <span>Pending</span>
+                    </div>
+                    <div class="status-step confirmed">
+                        <div class="status-icon">✅</div>
+                        <span>Confirmed</span>
+                    </div>
+                    <div class="status-step partial">
+                        <div class="status-icon">📦</div>
+                        <span>Partially Shipped</span>
+                    </div>
+                    <div class="status-step shipped">
+                        <div class="status-icon">🚚</div>
+                        <span>Shipped</span>
+                    </div>
+                    <div class="status-step invoiced">
+                        <div class="status-icon">🧾</div>
+                        <span>Invoiced</span>
+                    </div>
+                    <div class="status-step canceled">
+                        <div class="status-icon">❌</div>
+                        <span>Canceled</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="order-grid">
+                <section class="order-card">
+                    <h2>Order Search</h2>
+                    <div class="card-content">
+                        <input type="text" placeholder="Enter Order ID..." class="search-input">
+                        <button class="action-btn">Track Order</button>
+                    </div>
+                </section>
+                
+                <section class="order-card">
+                    <h2>Bulk Status Update</h2>
+                    <div class="card-content">
+                        <select class="status-select">
+                            <option>Select status...</option>
+                            <option>Pending</option>
+                            <option>Confirmed</option>
+                            <option>Partially Shipped</option>
+                            <option>Shipped</option>
+                            <option>Invoiced</option>
+                            <option>Canceled</option>
+                        </select>
+                        <button class="action-btn">Update Orders</button>
+                    </div>
+                </section>
+                
+                <section class="order-card">
+                    <h2>Customer Notifications</h2>
+                    <div class="card-content">
+                        <p>Configure automated status alerts</p>
+                        <button class="action-btn">Notification Settings</button>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="order.js"></script>
+</body>
+</html>

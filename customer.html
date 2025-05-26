@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Account Management</title>
+    <link rel="stylesheet" href="customer.css">
+</head>
+<body>
+    <div class="customer-container">
+        <header class="customer-header">
+            <h1>Customer Account Management</h1>
+            <div class="header-actions">
+                <button id="backBtn">← Back to Dashboard</button>
+                <button id="logoutBtn">Logout</button>
+            </div>
+        </header>
+        
+        <main class="customer-content">
+            <div class="customer-grid">
+                <section class="customer-card">
+                    <h2>Customer Master Data</h2>
+                    <div class="card-content">
+                        <p>View and manage all customer records</p>
+                        <button class="action-btn">Manage Data</button>
+                    </div>
+                </section>
+                
+                <section class="customer-card">
+                    <h2>Address Management</h2>
+                    <div class="card-content">
+                        <p>Manage billing and shipping addresses</p>
+                        <button class="action-btn">Manage Addresses</button>
+                    </div>
+                </section>
+                
+                <section class="customer-card">
+                    <h2>Contact Persons</h2>
+                    <div class="card-content">
+                        <p>Manage customer contact information</p>
+                        <button class="action-btn">Manage Contacts</button>
+                    </div>
+                </section>
+                
+                <section class="customer-card">
+                    <h2>Credit Limits</h2>
+                    <div class="card-content">
+                        <p>Assign and manage customer credit limits</p>
+                        <button class="action-btn">Manage Credits</button>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="customer.js"></script>
+</body>
+</html>

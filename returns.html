@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Returns & Complaints</title>
+    <link rel="stylesheet" href="returns.css">
+</head>
+<body>
+    <div class="returns-container">
+        <header class="returns-header">
+            <h1>Returns, Complaints & Refunds</h1>
+            <div class="header-actions">
+                <button id="backBtn">← Back to Dashboard</button>
+                <button id="logoutBtn">Logout</button>
+            </div>
+        </header>
+        
+        <main class="returns-content">
+            <div class="returns-grid">
+                <section class="returns-card">
+                    <h2>New Return Request</h2>
+                    <div class="card-content">
+                        <select class="form-input">
+                            <option>Select order...</option>
+                            <option>Order #1001 - 3 items</option>
+                            <option>Order #1002 - 1 item</option>
+                            <option>Order #1005 - 2 items</option>
+                        </select>
+                        <textarea class="form-input" placeholder="Reason for return..."></textarea>
+                        <button class="action-btn">Submit Request</button>
+                    </div>
+                </section>
+                
+                <section class="returns-card">
+                    <h2>Process Refund</h2>
+                    <div class="card-content">
+                        <input type="text" class="form-input" placeholder="Return ID">
+                        <div class="refund-options">
+                            <label><input type="radio" name="refundType" checked> Full Refund</label>
+                            <label><input type="radio" name="refundType"> Partial Refund</label>
+                        </div>
+                        <button class="action-btn">Issue Refund</button>
+                    </div>
+                </section>
+                
+                <section class="returns-card">
+                    <h2>Complaint Resolution</h2>
+                    <div class="card-content">
+                        <input type="text" class="form-input" placeholder="Complaint reference #">
+                        <select class="form-input">
+                            <option>Select resolution...</option>
+                            <option>Refund issued</option>
+                            <option>Replacement sent</option>
+                            <option>Credit note</option>
+                            <option>Other compensation</option>
+                        </select>
+                        <button class="action-btn">Resolve Complaint</button>
+                    </div>
+                </section>
+                
+                <section class="returns-card">
+                    <h2>Return Analytics</h2>
+                    <div class="card-content">
+                        <div class="stats">
+                            <div class="stat-item">
+                                <span class="stat-value">24</span>
+                                <span class="stat-label">Pending Returns</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">5.2%</span>
+                                <span class="stat-label">Return Rate</span>
+                            </div>
+                        </div>
+                        <button class="action-btn">View Reports</button>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="returns.js"></script>
+</body>
+</html>

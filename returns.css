@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #0a192f;
+    color: white;
+    min-height: 100vh;
+}
+
+.returns-container {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    min-height: 100vh;
+}
+
+.returns-header {
+    background-color: #172a45;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.returns-header h1 {
+    color: #64ffda;
+    font-size: 24px;
+}
+
+.header-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.header-actions button {
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 14px;
+}
+
+#backBtn {
+    background-color: #1f3a68;
+    border: 1px solid #1f3a68;
+    color: white;
+}
+
+#backBtn:hover {
+    background-color: #2a4a7a;
+}
+
+#logoutBtn {
+    background-color: transparent;
+    border: 1px solid #64ffda;
+    color: #64ffda;
+}
+
+#logoutBtn:hover {
+    background-color: rgba(100, 255, 218, 0.1);
+}
+
+.returns-content {
+    padding: 30px;
+}
+
+.returns-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.returns-card {
+    background-color: #172a45;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.returns-card:hover {
+    transform: translateY(-5px);
+}
+
+.returns-card h2 {
+    color: #64ffda;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #0a192f;
+    border: 1px solid #303f60;
+    border-radius: 4px;
+    color: white;
+}
+
+textarea.form-input {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.refund-options {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+.refund-options label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    color: #64ffda;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #ccd6f6;
+}
+
+.action-btn {
+    background-color: #64ffda;
+    color: #0a192f;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.action-btn:hover {
+    background-color: #52d1b2;
+}
+
+@media (max-width: 768px) {
+    .returns-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .header-actions {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .stats {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
