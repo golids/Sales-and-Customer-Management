@@ -231,3 +231,78 @@ textarea.form-input {
         margin-top: 10px;
     }
 }
+
+/* Add these new styles */
+.returns-table-section {
+    margin-top: 40px;
+    background-color: #172a45;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.returns-table-section h2 {
+    color: #64ffda;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #303f60;
+}
+
+th {
+    background-color: #1f3a68;
+    color: #64ffda;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+}
+
+tr:hover {
+    background-color: rgba(100, 255, 218, 0.05);
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status-pending {
+    background-color: rgba(255, 193, 7, 0.2);
+    color: #ffc107;
+}
+
+.status-completed {
+    background-color: rgba(40, 167, 69, 0.2);
+    color: #28a745;
+}
+
+.status-rejected {
+    background-color: rgba(220, 53, 69, 0.2);
+    color: #dc3545;
+}
+
+.table-action {
+    color: #64ffda;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.table-action:hover {
+    text-decoration: underline;
+}
