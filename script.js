@@ -18,6 +18,9 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     } else if (username.length < 4) {
         document.getElementById('usernameError').textContent = 'Username must be at least 4 characters';
         isValid = false;
+    } else if (username !== 'AdminERP') {
+        document.getElementById('usernameError').textContent = 'Invalid username';
+        isValid = false;
     }
     
     if (password === '') {
@@ -26,9 +29,12 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     } else if (password.length < 6) {
         document.getElementById('passwordError').textContent = 'Password must be at least 6 characters';
         isValid = false;
+    } else if (password !== 'AdminERP_2025') {
+        document.getElementById('passwordError').textContent = 'Invalid password';
+        isValid = false;
     }
     
-// If form is valid, redirect to dashboard
+    // If form is valid, redirect to dashboard
     if (isValid) {
         window.location.href = 'dashboard.html';
     }
@@ -44,3 +50,16 @@ document.querySelectorAll('.form-group input').forEach(input => {
         this.parentElement.querySelector('label').style.color = '#ccd6f6';
     });
 });
+
+// Optional: Remember me functionality
+const rememberCheckbox = document.querySelector('input[name="remember"]');
+if (localStorage.getItem('rememberAdmin') === 'true') {
+    rememberCheckbox.checked = true;
+    document.getElementById('username').value = 'AdminERP';
+}
+
+if (rememberCheckbox) {
+    rememberCheckbox.addEventListener('change', function() {
+        localStorage.setItem('rememberAdmin', this.checked);
+    });
+}
