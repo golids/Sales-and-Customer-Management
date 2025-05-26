@@ -133,3 +133,41 @@ body {
     text-decoration: underline;
 }
 
+/* Password toggle styles */
+.password-toggle-container {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+    background: transparent;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+}
+
+.password-toggle-icon {
+    font-family: 'Material Icons';
+    font-size: 20px;
+    user-select: none;
+    transition: color 0.2s;
+}
+
+.password-toggle-container:hover .password-toggle-icon {
+    color: #333;
+}
+
+/* Add position relative to form group */
+.form-group {
+    position: relative;
+}
+
+/* Adjust password input padding to make space for the icon */
+#password {
+    padding-right: 35px;
+}

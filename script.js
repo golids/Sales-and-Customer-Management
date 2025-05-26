@@ -51,6 +51,45 @@ document.querySelectorAll('.form-group input').forEach(input => {
     });
 });
 
+// Forgot password functionality
+document.querySelector('.forgot-password').addEventListener('click', function(e) {
+    e.preventDefault();
+    alert('Forgot your password? Please contact your IT Support for assistance.');
+});
+
+// Password visibility toggle with auto-hide
+const passwordInput = document.getElementById('password');
+const passwordField = passwordInput.parentElement;
+
+// Create eye icon container
+const toggleContainer = document.createElement('div');
+toggleContainer.className = 'password-toggle-container';
+
+// Create eye icon
+const passwordToggle = document.createElement('i');
+passwordToggle.className = 'password-toggle-icon';
+passwordToggle.innerHTML = 'visibility'; // Material Icons "eye-off" symbol
+
+// Add to DOM
+toggleContainer.appendChild(passwordToggle);
+passwordField.appendChild(toggleContainer);
+
+// Click handler
+passwordToggle.addEventListener('click', function() {
+    // Toggle password visibility
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        passwordToggle.textContent = 'visibility'; // Material Icons "eye" symbol
+        passwordToggle.title = 'Show Password';
+        
+     //if gusto mag auto hide for seconds, add code here hehe   
+    } else {
+        passwordInput.type = 'password';
+        passwordToggle.textContent = 'visibility';
+        passwordToggle.title = 'Show password';
+    }
+});
+
 // Optional: Remember me functionality
 const rememberCheckbox = document.querySelector('input[name="remember"]');
 if (localStorage.getItem('rememberAdmin') === 'true') {
