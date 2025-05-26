@@ -195,3 +195,57 @@ body {
         display: none;
     }
 }
+
+.erp-footer {
+    background-color: #0a192f;
+    border-top: 1px solid #172a45;
+    padding: 20px 40px;
+    color: #ccd6f6;
+    font-size: 14px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.company-info h3 {
+    color: #64ffda;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.company-info p {
+    color: #ccd6f6;
+    font-size: 13px;
+}
+
+.legal-info {
+    text-align: right;
+}
+
+.legal-info a {
+    color: #64ffda;
+    text-decoration: none;
+}
+
+.legal-info a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .legal-info {
+        text-align: center;
+        margin-top: 10px;
+    }
+}
