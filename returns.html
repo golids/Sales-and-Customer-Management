@@ -3,116 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Returns & Complaints</title>
+    <title>Returns Management</title>
     <link rel="stylesheet" href="returns.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="returns-container">
-        <header class="returns-header">
-            <h1>Returns, Complaints & Refunds</h1>
+        <div class="returns-header">
+            <h1>Returns Management</h1>
             <div class="header-actions">
-                <button id="backBtn">← Back to Dashboard</button>
+                <button id="dashboardBtn"><i class="fas fa-arrow-left"></i> Dashboard</button>
                 <button id="logoutBtn">Logout</button>
             </div>
-        </header>
-        
-        <main class="returns-content">
-            <div class="returns-grid">
-                <section class="returns-card">
-                    <h2>New Return Request</h2>
-                    <div class="card-content">
-                        <select class="form-input">
-                            <option>Select order...</option>
-                            <option>Order #1001 - 3 items</option>
-                            <option>Order #1002 - 1 item</option>
-                            <option>Order #1005 - 2 items</option>
-                        </select>
-                        <textarea class="form-input" placeholder="Reason for return..."></textarea>
-                        <button class="action-btn">Submit Request</button>
-                    </div>
-                </section>
-                
-                <section class="returns-card">
-                    <h2>Process Refund</h2>
-                    <div class="card-content">
-                        <input type="text" class="form-input" placeholder="Return ID">
-                        <div class="refund-options">
-                            <label><input type="radio" name="refundType" checked> Full Refund</label>
-                            <label><input type="radio" name="refundType"> Partial Refund</label>
-                        </div>
-                        <button class="action-btn">Issue Refund</button>
-                    </div>
-                </section>
-                
-                <section class="returns-card">
-                    <h2>Complaint Resolution</h2>
-                    <div class="card-content">
-                        <input type="text" class="form-input" placeholder="Complaint reference #">
-                        <select class="form-input">
-                            <option>Select resolution...</option>
-                            <option>Refund issued</option>
-                            <option>Replacement sent</option>
-                            <option>Credit note</option>
-                            <option>Other compensation</option>
-                        </select>
-                        <button class="action-btn">Resolve Complaint</button>
-                    </div>
-                </section>
-                
-                <section class="returns-card">
-                    <h2>Return Analytics</h2>
-                    <div class="card-content">
-                        <div class="stats">
-                            <div class="stat-item">
-                                <span class="stat-value">24</span>
-                                <span class="stat-label">Pending Returns</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-value">5.2%</span>
-                                <span class="stat-label">Return Rate</span>
-                            </div>
-                        </div>
-                        <button class="action-btn">View Reports</button>
-                    </div>
-                </section>
+        </div>
+
+        <div class="returns-content">
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-value">24</span>
+                    <span class="stat-label">Pending Returns</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">156</span>
+                    <span class="stat-label">Processed</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">$2,450</span>
+                    <span class="stat-label">Total Refunds</span>
+                </div>
             </div>
-            <!-- Add this below the existing card grid but before closing </main> -->
-                <section class="returns-table-section">
-                    <h2>Recent Return Activities</h2>
-                    <div class="table-container">
-                        <table id="returnsTable">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Description</th>
-                                    <th>Type</th>
-                                    <th>Status</th>
-                                    <th>Date</th>
-                                    <th>Amount</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Table content will be populated by JavaScript -->
-                            </tbody>
-                        </table>
+
+            <div class="card-container">
+                <!-- Return Request Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-undo-alt"></i> Return Request</h2>
                     </div>
-                </section>
-        </main>
+                    <div class="card-body">
+                        <input type="text" class="form-input" placeholder="Customer ID">
+                        <textarea class="form-input" placeholder="Reason for return"></textarea>
+                        <button class="action-btn">Submit Return</button>
+                    </div>
+                </div>
+
+                <!-- Exchange Request Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-exchange-alt"></i> Exchange Request</h2>
+                    </div>
+                    <div class="card-body">
+                        <input type="text" class="form-input" placeholder="Customer ID">
+                        <textarea class="form-input" placeholder="Reason for exchange"></textarea>
+                        <button class="action-btn">Submit Exchange</button>
+                    </div>
+                </div>
+
+                <!-- Refund Request Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-money-bill-wave"></i> Refund Request</h2>
+                    </div>
+                    <div class="card-body">
+                        <input type="text" class="form-input" placeholder="Customer ID">
+                        <div class="refund-options">
+                            <label>
+                                <input type="radio" name="refundType" checked>
+                                Full Refund
+                            </label>
+                            <label>
+                                <input type="radio" name="refundType">
+                                Partial Refund
+                            </label>
+                        </div>
+                        <input type="text" class="form-input" placeholder="Amount (if partial)">
+                        <button class="action-btn">Process Refund</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Table Section -->
+            <div class="returns-table-section">
+                <h2>Return Records</h2>
+                <div class="table-container">
+                    <table id="returnsTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data will be loaded here by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <footer class="erp-footer">
+            <div class="footer-content">
+                <div class="company-info">
+                    <h3>ENTERPRISE RESOURCE PLANNING</h3>
+                    <p>Streamlining business operations through integrated solutions</p>
+                </div>
+                <div class="legal-info">
+                    <p>© 2025 All rights reserved</p>
+                    <p>For inquiries: <a href="mailto:rebucas.goldaelove08@gmail.com">rebucas.goldaelove08@gmail.com</a></p>
+                </div>
+            </div>
+        </footer>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="returns.js"></script>
-    <footer class="erp-footer">
-    <div class="footer-content">
-        <div class="company-info">
-            <h3>ENTERPRISE RESOURCE PLANNING</h3>
-            <p>Streamlining business operations through integrated solutions</p>
-        </div>
-        <div class="legal-info">
-            <p>© 2025 All rights reserved</p>
-            <p>For inquiries: <a href="mailto:rebucas.goldaelove08@gmail.com">rebucas.goldaelove08@gmail.com</a></p>
-        </div>
-    </div>
-</footer>
 </body>
 </html>
