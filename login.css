@@ -6,16 +6,19 @@
 }
 
 body {
-    background-color: #0a192f;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('../images/erp.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    color: white;
 }
 
 .login-container {
-    background-color: #172a45;
+    background-color: rgba(23, 42, 69, 0.9); /* Added transparency */
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
@@ -36,6 +39,7 @@ body {
 
 .login-header p {
     color: #ccd6f6;
+    margin-bottom: 7px;
     font-size: 14px;
 }
 
