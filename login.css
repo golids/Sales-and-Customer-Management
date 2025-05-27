@@ -43,6 +43,11 @@ body {
     font-size: 14px;
 }
 
+.login-header i {
+    color: #ffffff;
+    font-size: 12px;
+}
+
 .form-group {
     margin-bottom: 20px;
 }

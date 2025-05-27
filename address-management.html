@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Address Management</title>
+    <link rel="stylesheet" href="customer.css">
+    <link rel="stylesheet" href="address-management.css">
+</head>
+<body>
+    <div class="customer-container">
+        <header class="customer-header">
+            <h1>Address Management</h1>
+            <div class="header-actions">
+                <button id="backBtn">← Back to Customer Management</button>
+                <button id="logoutBtn">Logout</button>
+            </div>
+        </header>
+        
+        <main class="address-content">
+            <!-- Add Address Card Form -->
+            <section class="form-section">
+                <div class="form-card">
+                    <h3><i class="fas fa-plus-circle"></i> Add New Address</h3>
+                    <form id="addressForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="addressType">Address Type</label>
+                                <select id="addressType" class="form-input">
+                                    <option value="billing">Billing</option>
+                                    <option value="shipping">Shipping</option>
+                                    <option value="both">Both</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="street">Street Address</label>
+                                <input type="text" id="street" class="form-input" placeholder="123 Main St">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" id="city" class="form-input" placeholder="New York">
+                            </div>
+                            <div class="form-group">
+                                <label for="state">State</label>
+                                <input type="text" id="state" class="form-input" placeholder="NY">
+                            </div>
+                            <div class="form-group">
+                                <label for="zip">ZIP Code</label>
+                                <input type="text" id="zip" class="form-input" placeholder="10001">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <input type="text" id="country" class="form-input" placeholder="USA">
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="action-btn">
+                                <i class="fas fa-save"></i> Save Address
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Address Table Section -->
+            <section class="table-section">
+                <h2><i class="fas fa-table"></i> Address Records</h2>
+                <div class="table-responsive">
+                    <table class="address-table">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Address</th>
+                                <th>City</th>
+                                <th>State</th>
+                                <th>ZIP</th>
+                                <th>Country</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="addressTableBody">
+                            <!-- Table rows will be inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <footer class="erp-footer">
+        <div class="footer-content">
+            <div class="company-info">
+                <h3>ENTERPRISE RESOURCE PLANNING</h3>
+                <p>Streamlining business operations through integrated solutions</p>
+            </div>
+            <div class="legal-info">
+                <p>© 2025 All rights reserved</p>
+                <p>For inquiries: <a href="mailto:rebucas.goldaelove08@gmail.com">rebucas.goldaelove08@gmail.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="address-management.js"></script>
+</body>
+</html>
