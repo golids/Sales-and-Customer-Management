@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Tracking</title>
     <link rel="stylesheet" href="order.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
     <div class="order-container">
@@ -19,80 +20,94 @@
         <main class="order-content">
             <div class="status-tracker">
                 <div class="status-progress">
-                    <div class="status-step pending active">
+                    <div class="status-step" data-status="pending">
                         <div class="status-icon">⏳</div>
                         <span>Pending</span>
                     </div>
-                    <div class="status-step confirmed">
+                    <div class="status-step" data-status="confirmed">
                         <div class="status-icon">✅</div>
                         <span>Confirmed</span>
                     </div>
-                    <div class="status-step partial">
+                    <div class="status-step" data-status="partially_shipped">
                         <div class="status-icon">📦</div>
                         <span>Partially Shipped</span>
                     </div>
-                    <div class="status-step shipped">
+                    <div class="status-step" data-status="shipped">
                         <div class="status-icon">🚚</div>
                         <span>Shipped</span>
                     </div>
-                    <div class="status-step invoiced">
+                    <div class="status-step" data-status="invoiced">
                         <div class="status-icon">🧾</div>
                         <span>Invoiced</span>
                     </div>
-                    <div class="status-step canceled">
+                    <div class="status-step" data-status="canceled">
                         <div class="status-icon">❌</div>
                         <span>Canceled</span>
                     </div>
                 </div>
             </div>
             
-            <div class="order-grid">
-                <section class="order-card">
-                    <h2>Order Search</h2>
-                    <div class="card-content">
-                        <input type="text" placeholder="Enter Order ID..." class="search-input">
-                        <button class="action-btn">Track Order</button>
-                    </div>
-                </section>
-                
-                <section class="order-card">
-                    <h2>Bulk Status Update</h2>
-                    <div class="card-content">
-                        <select class="status-select">
-                            <option>Select status...</option>
-                            <option>Pending</option>
-                            <option>Confirmed</option>
-                            <option>Partially Shipped</option>
-                            <option>Shipped</option>
-                            <option>Invoiced</option>
-                            <option>Canceled</option>
-                        </select>
-                        <button class="action-btn">Update Orders</button>
-                    </div>
-                </section>
-                
-                <section class="order-card">
-                    <h2>Customer Notifications</h2>
-                    <div class="card-content">
-                        <p>Configure automated status alerts</p>
-                        <button class="action-btn">Notification Settings</button>
-                    </div>
-                </section>
+            <div class="order-actions">
+                <div class="search-box">
+                    <input type="text" id="orderSearchInput" placeholder="Enter Order ID...">
+                    <button id="trackOrderBtn">Track Order</button>
+                </div>
+                <div class="bulk-update">
+                    <select id="statusSelect">
+                        <option value="">Select status...</option>
+                        <option value="pending">Pending</option>
+                        <option value="confirmed">Confirmed</option>
+                        <option value="partially_shipped">Partially Shipped</option>
+                        <option value="shipped">Shipped</option>
+                        <option value="invoiced">Invoiced</option>
+                        <option value="canceled">Canceled</option>
+                    </select>
+                    <button id="bulkUpdateBtn">Update Orders</button>
+                </div>
+                <button id="notificationBtn">Notification Settings</button>
+            </div>
+            
+            <div class="orders-table-container">
+                <table id="ordersTable">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Total</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Orders will be loaded here -->
+                    </tbody>
+                </table>
             </div>
         </main>
     </div>
-        <footer class="erp-footer">
-            <div class="footer-content">
-                <div class="company-info">
-                    <h3>SWIFTCART LOGISTICS</h3>
-                    <p><i>Fast. Reliable. Delivered.</i></p>
-                </div>
-                <div class="legal-info">
-                    <p>© 2025 All rights reserved</p>
-                    <p>For inquiries: <a href="mailto:rebucas.goldaelove08@gmail.com">rebucas.goldaelove08@gmail.com</a></p>
-                </div>
+
+    <!-- Order Details Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="orderDetailsContent"></div>
+        </div>
+    </div>
+
+    <footer class="erp-footer">
+        <div class="footer-content">
+            <div class="company-info">
+                <h3>SWIFTCART LOGISTICS</h3>
+                <p><i>Fast. Reliable. Delivered.</i></p>
             </div>
-        </footer>
+            <div class="legal-info">
+                <p>© 2025 All rights reserved</p>
+                <p>For inquiries: <a href="mailto:rebucas.goldaelove08@gmail.com">rebucas.goldaelove08@gmail.com</a></p>
+            </div>
+        </div>
+    </footer>
+
     <script src="order.js"></script>
 </body>
 </html>
