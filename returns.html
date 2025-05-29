@@ -58,25 +58,18 @@
                     </div>
                 </div>
 
-                <!-- Refund Request Card -->
+                <!-- Ticket Management Card -->
                 <div class="card">
                     <div class="card-header">
-                        <h2><i class="fas fa-money-bill-wave"></i> Refund Request</h2>
+                        <h2><i class="fas fa-money-bill-wave"></i> Ticket Management</h2>
                     </div>
                     <div class="card-body">
-                        <input type="text" class="form-input" placeholder="Customer ID">
-                        <div class="refund-options">
-                            <label>
-                                <input type="radio" name="refundType" checked>
-                                Full Refund
-                            </label>
-                            <label>
-                                <input type="radio" name="refundType">
-                                Partial Refund
-                            </label>
+                        <input type="text" class="form-input" placeholder="Ticket ID">
+                        <div class="ticket-options">
                         </div>
-                        <input type="text" class="form-input" placeholder="Amount (if partial)">
-                        <button class="action-btn">Process Refund</button>
+                        <input type="text" class="form-input" placeholder="Customer ID">
+                        <button class="action-btn" onclick="window.location.href='http://admin-customer-service.vercel.app/'">Manage Tickets</button>
+
                     </div>
                 </div>
             </div>
