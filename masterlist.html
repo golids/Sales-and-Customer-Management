@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Master Data</title>
+    <link rel="stylesheet" href="masterlist.css">
+</head>
+<body>
+    <div class="masterlist-container">
+        <header class="masterlist-header">
+            <h1>Customer Master Data</h1>
+            <div class="header-actions">
+                <button id="backBtn">← Back to Customer Management</button>
+                <button id="logoutBtn">Logout</button>
+            </div>
+        </header>
+        
+        <main class="masterlist-content">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Customer ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Created At</th>
+                            <th>Address</th>
+                            <th>Password</th>
+                            <th>Loyalty Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    
+    <footer class="erp-footer">
+        <div class="footer-content">
+            <div class="company-info">
+                <h3>SWIFTCART LOGISTICS</h3>
+                <p><i>Fast. Reliable. Delivered.</i></p>
+            </div>
+            <div class="legal-info">
+                <p>© 2025 All rights reserved</p>
+                <p>For inquiries: <a href="mailto:rebucas.goldaelove08@gmail.com">rebucas.goldaelove08@gmail.com</a></p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="masterlist.js"></script>
+</body>
+</html>

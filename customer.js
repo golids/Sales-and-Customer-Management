@@ -14,11 +14,17 @@ document.addEventListener('DOMContentLoaded', function() {
     actionButtons.forEach(button => {
         button.addEventListener('click', function() {
             const cardTitle = this.closest('.customer-card').querySelector('h2').textContent;
-            
+
+            if (cardTitle === "Customer Master Data") {
+                window.location.href = 'masterlist.html';
+            } else {
+                alert(`You clicked: ${cardTitle}\n\nThis would open the specific management section in a real application.`);
+            }
+
             if (cardTitle === "Address Management") {
                 window.location.href = 'address-management.html';
             } else {
-                alert(`You clicked: ${cardTitle}\n\nThis would open the specific management section in a real application.`);
+                alert(`You clicked: ${cardTitle}`);
             }
         });
     });
