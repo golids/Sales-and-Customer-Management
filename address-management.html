@@ -6,6 +6,7 @@
     <title>Address Management</title>
     <link rel="stylesheet" href="customer.css">
     <link rel="stylesheet" href="address-management.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="customer-container">
@@ -18,34 +19,46 @@
         </header>
         
         <main class="address-content">
-            <!-- Add Address Card Form -->
+            <!-- Loading Indicator -->
+            <div id="loadingIndicator" class="loading-indicator" style="display: none;">
+                <div class="loading-spinner"></div>
+                <p>Loading addresses...</p>
+            </div>
+
+            <!-- Add/Edit Address Form -->
             <section class="form-section">
                 <div class="form-card">
-                    <h3><i class="fas fa-plus-circle"></i> Add New Address</h3>
+                    <h3><i class="fas fa-address-card"></i> <span id="formTitle">Add New Address</span></h3>
                     <form id="addressForm">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="addressType">Address Type</label>
-                                <select id="addressType" class="form-input">
-                                    <option value="billing">Billing</option>
-                                    <option value="shipping">Shipping</option>
-                                    <option value="both">Both</option>
+                                <select id="addressType" class="form-input" required>
+                                    <option value="home">Home</option>
+                                    <option value="work">Work</option>
+                                    <option value="other">Others</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="street">Street Address</label>
-                                <input type="text" id="street" class="form-input" placeholder="123 Main St">
+                                <input type="text" id="street" class="form-input" placeholder="123 Main St" required>
                             </div>
                         </div>
                         
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="city">City</label>
-                                <input type="text" id="city" class="form-input" placeholder="New York">
+                                <select id="city" class="form-input" required>
+                                    <!-- Cities will be populated dynamically -->
+                                    <option value="">Select City</option>
+                                </select>
                             </div>
                             <div class="form-group">
-                                <label for="state">State</label>
-                                <input type="text" id="state" class="form-input" placeholder="NY">
+                                <label for="country">Country</label>
+                                <select id="country" class="form-input" required>
+                                    <!-- Countries will be populated dynamically -->
+                                    <option value="">Select Country</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="zip">ZIP Code</label>
@@ -53,13 +66,11 @@
                             </div>
                         </div>
                         
-                        <div class="form-group">
-                            <label for="country">Country</label>
-                            <input type="text" id="country" class="form-input" placeholder="USA">
-                        </div>
-                        
                         <div class="form-actions">
-                            <button type="submit" class="action-btn">
+                            <button type="button" id="cancelBtn" class="action-btn secondary">
+                                <i class="fas fa-times"></i> Cancel
+                            </button>
+                            <button type="submit" class="action-btn primary">
                                 <i class="fas fa-save"></i> Save Address
                             </button>
                         </div>
@@ -69,22 +80,24 @@
 
             <!-- Address Table Section -->
             <section class="table-section">
-                <h2><i class="fas fa-table"></i> Address Records</h2>
+                <h2><i class="fas fa-list"></i> Address Records</h2>
                 <div class="table-responsive">
                     <table class="address-table">
                         <thead>
                             <tr>
                                 <th>Type</th>
-                                <th>Address</th>
+                                <th>Street</th>
                                 <th>City</th>
-                                <th>State</th>
-                                <th>ZIP</th>
                                 <th>Country</th>
+                                <th>ZIP</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody id="addressTableBody">
-                            <!-- Table rows will be inserted here -->
+                            <!-- Table rows will be inserted here by JavaScript -->
+                            <tr class="no-data">
+                                <td colspan="6">Loading addresses...</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -92,21 +105,21 @@
         </main>
     </div>
     
-        <footer class="erp-footer">
-            <div class="footer-content">
-                <div class="company-info">
-                    <h3>SWIFTCART LOGISTICS</h3>
-                    <p><i>Fast. Reliable. Delivered.</i></p>
-                </div>
-                <div class="legal-info">
-                    <p>© 2025 All rights reserved</p>
-                    <p>For inquiries: <a href="mailto:rebucas.goldaelove08@gmail.com">rebucas.goldaelove08@gmail.com</a></p>
-                </div>
+    <footer class="erp-footer">
+        <div class="footer-content">
+            <div class="company-info">
+                <h3>SWIFTCART LOGISTICS</h3>
+                <p><i>Fast. Reliable. Delivered.</i></p>
             </div>
-        </footer>
+            <div class="legal-info">
+                <p>© 2025 All rights reserved</p>
+                <p>For inquiries: <a href="mailto:rebucas.goldaelove08@gmail.com">rebucas.goldaelove08@gmail.com</a></p>
+            </div>
+        </div>
+    </footer>
 
-    <!-- Font Awesome for icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Supabase and other scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="address-management.js"></script>
 </body>
 </html>
